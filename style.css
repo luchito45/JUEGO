@@ -1,0 +1,203 @@
+/* --- FUENTE GENERAL --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg,#0f172a,#1e293b,#0f172a);
+  background-size: 400% 400%;
+  animation: bgMove 12s ease infinite;
+  margin:0;
+  padding:20px;
+  color:#e2e8f0;
+  text-align:center;
+}
+
+/* Fondo animado */
+@keyframes bgMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* --- CONTENEDORES PRINCIPALES --- */
+.pantalla{
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:14px;
+  padding:22px;
+  max-width:1000px;
+  margin:20px auto;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+  color:#f1f5f9;
+}
+
+.oculto{display:none}
+
+/* --- TITULOS --- */
+h1{
+  color:#60a5fa;
+  margin:6px 0;
+  text-shadow:0 0 14px rgba(96,165,250,0.6);
+  font-weight:700;
+}
+
+h2{
+  color:#93c5fd;
+  text-shadow:0 0 10px rgba(147,197,253,0.4);
+}
+
+/* Subtexto */
+.slogan{
+  color:#cbd5e1;
+  margin-top:0;
+  font-weight:300;
+}
+
+/* --- BOTONES --- */
+.btn{
+  background:linear-gradient(135deg,#3b82f6,#2563eb);
+  color:white;
+  border:none;
+  padding:12px 18px;
+  border-radius:12px;
+  cursor:pointer;
+  margin:8px;
+  font-size:15px;
+  font-weight:600;
+  transition:0.25s;
+  box-shadow:0 4px 16px rgba(59,130,246,0.4);
+}
+
+.btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 6px 22px rgba(59,130,246,0.65);
+}
+
+/* Select dificultad */
+.dificultad label{
+  font-weight:600;
+  color:#93c5fd;
+}
+.dificultad select{
+  padding:6px 10px;
+  border-radius:8px;
+  border:1px solid #64748b;
+  background:#1e293b;
+  color:white;
+  font-weight:600;
+}
+
+/* --- INFORMACIÓN --- */
+.info{
+  display:flex;
+  justify-content:space-around;
+  gap:10px;
+  font-weight:700;
+  margin-bottom:14px;
+  color:#38bdf8;
+  text-shadow:0 0 6px rgba(56,189,248,0.5);
+}
+
+/* --- ZONAS --- */
+.contenedor-zonas{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  justify-content:center;
+  margin-top:6px;
+}
+
+.zona{
+  width:170px;
+  height:150px;
+  border:2px dashed #60a5fa;
+  border-radius:12px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:8px;
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(5px);
+  color:#cbd5e1;
+  font-weight:600;
+  transition:0.35s;
+}
+
+/* Acertado */
+.zona.good{
+  border-color:#4ade80;
+  background:rgba(74,222,128,0.15);
+  box-shadow:0 0 12px rgba(74,222,128,0.5);
+}
+
+/* Error */
+.zona.bad{
+  border-color:#f87171;
+  background:rgba(248,113,113,0.15);
+  box-shadow:0 0 12px rgba(248,113,113,0.5);
+}
+
+.contenedor-dispositivos{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  justify-content:center;
+  margin-top:10px;
+}
+
+/* --- ITEMS / DISPOSITIVOS --- */
+.item{
+  width:110px;
+  cursor:grab;
+  border-radius:12px;
+  padding:6px;
+  background:rgba(255,255,255,0.09);
+  border:1px solid rgba(255,255,255,0.15);
+  box-shadow:0 6px 20px rgba(0,0,0,0.25);
+  transition:transform .18s, box-shadow .18s;
+  color:#f8fafc;
+}
+
+.item:hover{
+  transform:scale(1.07);
+  box-shadow:0 8px 22px rgba(0,0,0,0.35);
+}
+
+.item.dragging{
+  transform:scale(.95);
+  opacity:.8;
+}
+
+.item img{
+  width:100%;
+  height:72px;
+  object-fit:contain;
+  border-radius:8px;
+}
+
+/* Mensajes */
+.mens{
+  color:#f87171;
+  font-weight:700;
+  margin-top:8px;
+}
+
+/* Animaciones */
+.bien{animation:pop .25s ease}
+.mal{animation:shake .35s ease}
+
+@keyframes pop{
+  0%{transform:scale(.85);opacity:0}
+  60%{transform:scale(1.05);opacity:1}
+  100%{transform:scale(1)}
+}
+
+@keyframes shake{
+  0%{transform:translateX(0)}
+  25%{transform:translateX(-6px)}
+  50%{transform:translateX(6px)}
+  75%{transform:translateX(-4px)}
+  100%{transform:translateX(0)}
+}

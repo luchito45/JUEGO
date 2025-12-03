@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!-- PANTALLA INICIO -->
+<div id="pantalla-inicio" class="pantalla">
+  <h1>ARMADO DE REDES – EPT</h1>
+  <p class="slogan">Conecta, piensa y organiza la red</p>
+
+  <button id="btn-reglas" class="btn">Ver reglas</button>
+
+  <div class="dificultad">
+    <label>Selecciona dificultad:</label>
+    <select id="select-dificultad">
+      <option value="facil">Fácil</option>
+      <option value="medio">Medio</option>
+      <option value="dificil">Difícil</option>
+    </select>
+  </div>
+
+  <button id="btn-iniciar" class="btn iniciar">Iniciar juego</button>
+</div>
+
+<!-- PANTALLA REGLAS -->
+<div id="pantalla-reglas" class="pantalla oculto">
+  <h2>REGLAS DEL JUEGO</h2>
+  <ul>
+    <li>Arrastra cada dispositivo a la zona correcta.</li>
+    <li>Los dispositivos colocados quedan fijos y no se pueden mover.</li>
+    <li>3 errores seguidos → bloqueo por 5 segundos.</li>
+    <li>Hay tiempo límite según la dificultad.</li>
+    <li>Hay 3 niveles: subes al completar cada nivel.</li>
+  </ul>
+  <button id="btn-volver" class="btn">Volver</button>
+</div>
+
+<!-- PANTALLA JUEGO -->
+<div id="pantalla-juego" class="pantalla oculto">
+  <div class="info">
+    <div>⏳ Tiempo: <span id="tiempo">0</span>s</div>
+    <div>⭐ Puntaje: <span id="puntaje">0</span></div>
+    <div>Nivel: <span id="nivel">1</span> / 3</div>
+  </div>
+
+  <div id="zonas" class="contenedor-zonas"></div>
+
+  <h4 style="margin-top:18px">Dispositivos disponibles</h4>
+  <div id="dispositivos" class="contenedor-dispositivos"></div>
+
+  <div id="mensajes" style="margin-top:12px;color:#ffd700;font-weight:700"></div>
+
+  <div style="margin-top:14px">
+    <button id="btn-reiniciar" class="btn">Reiniciar</button>
+    <button id="btn-menu" class="btn">Volver al menú</button>
+  </div>
+</div>
+
+<!-- PANTALLA FINAL -->
+<div id="pantalla-fin" class="pantalla oculto">
+  <h2 id="titulo-final"></h2>
+  <p id="texto-final"></p>
+  <p id="medalla-final" style="font-size:28px;margin-top:8px"></p>
+  <button id="btn-jugar-otra" class="btn">Jugar otra vez</button>
+</div>
+
+<!-- SONIDOS -->
+<audio id="snd-correct"><source src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg" type="audio/ogg"></audio>
+<audio id="snd-wrong"><source src="https://actions.google.com/sounds/v1/cartoon/boing.ogg" type="audio/ogg"></audio>
+<audio id="snd-win"><source src="https://actions.google.com/sounds/v1/cartoon/clang.ogg" type="audio/ogg"></audio>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
